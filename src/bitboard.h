@@ -3,7 +3,8 @@
 
 #include "common.h"
 
-enum {
+enum
+{
     ALL_SQUARES = 0xFFFFFFFFFFFFFFFFull,
 
     FILE_A = 0x8080808080808080ull,
@@ -24,8 +25,13 @@ enum {
     RANK_7 = 0x00FF000000000000ull,
     RANK_8 = 0xFF00000000000000ull,
 
-    LIGHT_SQUARES = 0x55AA55AA55AA55AAull,
+    LIGHT_SQUARES = 0xAA55AA55AA55AA55ull,
     DARK_SQUARES = ~LIGHT_SQUARES,
 };
+
+extern const uint64_t ranks[8], files[8];
+
+inline int rank_of(int square);
+inline int file_of(int square);
 
 #endif
