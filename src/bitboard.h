@@ -27,11 +27,25 @@ enum
 
     LIGHT_SQUARES = 0xAA55AA55AA55AA55ull,
     DARK_SQUARES = ~LIGHT_SQUARES,
+
+    PAWN_PROMOTIONS = RANK_1 | RANK_8,
 };
 
 extern const uint64_t ranks[8], files[8];
 
-inline int rank_of(int square);
-inline int file_of(int square);
+int rank_of(int square);
+int file_of(int square);
+int square_from(int file, int rank);
+uint64_t mask_rank(int square);
+uint64_t mask_file(int square);
+uint64_t mask_square(int square);
+uint64_t shift_north(uint64_t square_mask);
+uint64_t shift_south(uint64_t square_mask);
+uint64_t shift_east(uint64_t square_mask);
+uint64_t shift_west(uint64_t square_mask);
+uint64_t shift_NE(uint64_t square_mask);
+uint64_t shift_NW(uint64_t square_mask);
+uint64_t shift_SE(uint64_t square_mask);
+uint64_t shift_SW(uint64_t square_mask);
 
 #endif
