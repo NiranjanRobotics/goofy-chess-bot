@@ -5,6 +5,20 @@ init_board(Board *const board)
 {
     board->halfmoves = malloc(sizeof(Move) * 2);
     board->halfmove_counter = 0;
+
+    board->piece_boards[0] = WP_START;
+    board->piece_boards[1] = WN_START;
+    board->piece_boards[2] = WB_START;
+    board->piece_boards[3] = WR_START;
+    board->piece_boards[4] = WQ_START;
+    board->piece_boards[5] = WK_START;
+
+    board->piece_boards[6] = BP_START;
+    board->piece_boards[7] = BN_START;
+    board->piece_boards[8] = BB_START;
+    board->piece_boards[9] = BR_START;
+    board->piece_boards[10] = BQ_START;
+    board->piece_boards[11] = BK_START;
 }
 
 int

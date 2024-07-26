@@ -3,6 +3,7 @@
 
 #include "util/common.h"
 #include "util/types.h"
+#include "util/masks.h"
 #include "move.h"
 
 typedef struct
