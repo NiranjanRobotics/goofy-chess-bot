@@ -4,6 +4,7 @@ void
 init_board(Board *const board)
 {
     board->halfmoves = malloc(sizeof(Move) * 2);
+    board->halfmove_counter = 0;
 }
 
 int
