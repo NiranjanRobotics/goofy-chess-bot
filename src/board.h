@@ -1,8 +1,8 @@
 #ifndef board_h
 #define board_h
 
-#include "common.h"
-#include "types.h"
+#include "util/common.h"
+#include "util/types.h"
 
 typedef struct
 {

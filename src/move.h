@@ -1,8 +1,8 @@
 #ifndef move_c
 #define move_c
 
-#include "common.h"
-#include "types.h"
+#include "util/common.h"
+#include "util/types.h"
 
 typedef unsigned short Move;
 
