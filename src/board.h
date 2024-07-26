@@ -3,6 +3,7 @@
 
 #include "util/common.h"
 #include "util/types.h"
+#include "move.h"
 
 typedef struct
 {
@@ -16,13 +17,27 @@ typedef struct
 {
     Bitboard piece_boards[12];
     Piece piece_list[12];
+    Move *halfmoves;
+    int halfmove_counter;
     GameState state;
 } Board;
 
-Bitboard white_pieces(const Board *const board);
-Bitboard black_pieces(const Board *const board);
-Bitboard all_pieces(const Board *const board);
-Bitboard piece_bitboard(const Board *const board, const Side side, const PieceType piece_type);
-void play_move(const Board *const board/*, Move move */);
+void
+init_board(Board *const board);
+
+Bitboard
+white_pieces(const Board *const board);
+
+Bitboard
+black_pieces(const Board *const board);
+
+Bitboard
+all_pieces(const Board *const board);
+
+int
+piece_board(const Side side, const PieceType piece_type);
+
+void
+play_move(Board *const board, Move move);
 
 #endif

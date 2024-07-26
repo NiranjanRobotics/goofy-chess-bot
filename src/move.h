@@ -20,8 +20,13 @@ typedef enum
     FLAG_NIL = 0b0000,
 } MoveFlag;
 
-Square start_square(Move move);
-Square end_square(Move move);
-MoveFlag move_flag(Move move);
+Square
+start_square(const Move move);
+
+Square
+end_square(const Move move);
+
+MoveFlag
+move_flag(const Move move);
 
 #endif
