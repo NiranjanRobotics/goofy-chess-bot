@@ -1,5 +1,6 @@
 #include "board.h"
 
+// Initialize board pointer values
 void
 init_board(Board *const board, const Bitboard piece_boards[12], const GameState state)
 {
@@ -21,6 +22,7 @@ init_board(Board *const board, const Bitboard piece_boards[12], const GameState 
     board->state = state;
 }
 
+// Free board pointer
 void
 free_board(Board *board)
 {
@@ -28,12 +30,14 @@ free_board(Board *board)
     free(board);
 }
 
+// Get index of piece bitboard in board->piece_boards
 int
 piece_board(const Side side, const PieceType piece_type)
 {
     return (side == WHITE) ? 0 : 6 + piece_type;
 }
 
+// Bitboard for white pieces
 Bitboard
 white_pieces(const Board *const board)
 {
@@ -45,6 +49,7 @@ white_pieces(const Board *const board)
          | board->piece_boards[piece_board(WHITE, KING)];
 }
 
+// Bitboard for black pieces
 Bitboard
 black_pieces(const Board *const board)
 {
@@ -56,12 +61,14 @@ black_pieces(const Board *const board)
          | board->piece_boards[piece_board(BLACK, KING)];
 }
 
+// Bitboard for all pieces
 Bitboard
 all_pieces(const Board *const board)
 {
     return white_pieces(board) | black_pieces(board);
 }
 
+// Play move on the board
 void
 play_move(Board *const board, Move move)
 {

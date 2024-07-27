@@ -1,5 +1,6 @@
 #include "debug.h"
 
+// Code that is actually run, currently used for debugging purposes
 int main(int argc, char *argv[])
 {
     Board *board = safe_malloc(sizeof(Board));

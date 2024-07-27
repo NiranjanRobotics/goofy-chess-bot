@@ -1,5 +1,6 @@
 #include "masks.h"
 
+// Some bit masks that are useful with bitboards
 const Bitboard
     LIGHT_SQUARES = 0xAA55AA55AA55AA55ull,
     DARK_SQUARES = ~LIGHT_SQUARES,

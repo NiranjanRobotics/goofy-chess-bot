@@ -1,10 +1,14 @@
 #ifndef types_h
 #define types_h
 
+// Type definitions that are used throughout the project
+
 #include "common.h"
 
+// 64 bit representation of chessboard
 typedef uint64_t Bitboard;
 
+// Useful for using square names instead of numbers
 typedef enum
 {
     A8, B8, C8, D8, E8, F8, G8, H8,
@@ -18,6 +22,7 @@ typedef enum
     SQUARE_NIL,
 } Square;
 
+// Enum for piece types
 typedef enum
 {
     PAWN,
@@ -29,6 +34,7 @@ typedef enum
     PIECE_NIL,
 } PieceType;
 
+// Enum for sides
 typedef enum
 {
     WHITE,
@@ -36,6 +42,7 @@ typedef enum
     SIDE_NIL,
 } Side;
 
+// Enum for castling rights to be used with castling rights array in GameState struct
 typedef enum
 {
     WHITE_CR_K,
@@ -44,6 +51,7 @@ typedef enum
     BLACK_CR_Q,
 } CastlingRights;
 
+// Struct for piece list in board - shows piece's value and how many are on the board
 typedef struct
 {
     PieceType type;
@@ -51,6 +59,10 @@ typedef struct
     Side side;
 } Piece;
 
+/*
+ * Game state that tracks en passant target (usually SQUARE_NIL), castling rights (kingside 
+ * and queenside for both sides), counter for 50 move rule, and turn boolean for player turn
+ */
 typedef struct
 {
     Square en_passant_target;

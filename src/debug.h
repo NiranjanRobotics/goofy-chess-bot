@@ -1,6 +1,8 @@
 #ifndef debug_h
 #define debug_h
 
+// Useful debugging and logging functions
+
 #include "util/common.h"
 #include "util/masks.h"
 #include "util/types.h"

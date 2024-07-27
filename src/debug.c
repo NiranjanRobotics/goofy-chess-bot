@@ -2,7 +2,8 @@
 #include "move.h"
 #include "util/types.h"
 
-void 
+// Print info for board struct as well as gui-like board position
+void
 print_board_info(const Board *const board)
 {
     uint64_t bit, bitboard;
@@ -46,6 +47,7 @@ print_board_info(const Board *const board)
     printf(">\n");
 }
 
+// Print a bitboard in a human-readable and visual format
 void
 print_bitboard(const Bitboard bitboard)
 {
@@ -64,6 +66,7 @@ print_bitboard(const Bitboard bitboard)
     printf("]>\n");
 }
 
+// Print info for Move type
 void
 print_move_info(const Move move)
 {

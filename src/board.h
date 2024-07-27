@@ -1,12 +1,18 @@
 #ifndef board_h
 #define board_h
 
+// Board struct and functions
+
 #include "util/common.h"
 #include "util/types.h"
 #include "util/masks.h"
 #include "util/util.h"
 #include "move.h"
 
+/*
+ * Struct to represent board with piece_boards as bitboards for each piece, piece_list to track material,
+ * halfmoves to keep track of previous moves, halfmove_counter to count halfmoves, and game state
+ */
 typedef struct
 {
     Bitboard piece_boards[12];

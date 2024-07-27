@@ -4,8 +4,13 @@
 #include "util/common.h"
 #include "util/types.h"
 
+/*
+ * Move type (first 6 bits are start square, next 6 are end square, then last 4 are flags)
+ * Inspired by Sebastian Lague's move representation
+ */
 typedef unsigned short Move;
 
+// Enum for move flags
 typedef enum
 {
     PAWN_2MOVE_FLAG = 0b0100,

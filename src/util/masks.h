@@ -1,6 +1,8 @@
 #ifndef masks_h
 #define masks_h
 
+// Some useful bit masks for bitboards
+
 #include "common.h"
 #include "types.h"
 

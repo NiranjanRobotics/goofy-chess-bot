@@ -1,5 +1,6 @@
 #include "util.h"
 
+// Bitboards for starting position
 const Bitboard STARTING_POSITION[12] = {
     0x000000000000FF00ull,
     0x0000000000000042ull,
@@ -15,6 +16,7 @@ const Bitboard STARTING_POSITION[12] = {
     0x0800000000000000ull,
 };
 
+// Initial game state
 const GameState STARTING_STATE = {
     .en_passant_target = SQUARE_NIL,
     .white_turn = true,
@@ -22,6 +24,7 @@ const GameState STARTING_STATE = {
     .castling_rights = {true, true, true, true}
 };
 
+// Easy syntax for making pieces
 Piece
 piece_from(const PieceType type, const Side side, const int value, const int count)
 {
@@ -33,6 +36,7 @@ piece_from(const PieceType type, const Side side, const int value, const int cou
     };
 }
 
+// Count 1 bits in uint64_t (count active squares in bitboard)
 int
 population_count(const Bitboard board)
 {
@@ -43,6 +47,7 @@ population_count(const Bitboard board)
     return (int) ((count * 0x0101010101010101ull) >> 56);
 }
 
+// safe memory allocation that throws error if allocation failed
 void *
 safe_malloc(const size_t size)
 {

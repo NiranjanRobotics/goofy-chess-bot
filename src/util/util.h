@@ -1,6 +1,8 @@
 #ifndef util_h
 #define util_h
 
+// Utility functions and constants
+
 #include "common.h"
 #include "types.h"
 #include "masks.h"
