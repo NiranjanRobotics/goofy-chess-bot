@@ -8,9 +8,12 @@
 #include "move.h"
 
 void
-print_bitboard(Bitboard bitboard);
+print_board_info(const Board *const board);
 
 void
-print_move_info(Move move);
+print_bitboard(const Bitboard bitboard);
+
+void
+print_move_info(const Move move);
 
 #endif

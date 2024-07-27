@@ -36,9 +36,27 @@ typedef enum
     SIDE_NIL,
 } Side;
 
-typedef struct {
+typedef enum
+{
+    WHITE_CR_K,
+    WHITE_CR_Q,
+    BLACK_CR_K,
+    BLACK_CR_Q,
+} CastlingRights;
+
+typedef struct
+{
+    PieceType type;
     int value, count;
     Side side;
 } Piece;
+
+typedef struct
+{
+    Square en_passant_target;
+    bool castling_rights[4];
+    int fifty_move_counter;
+    bool white_turn;
+} GameState;
 
 #endif

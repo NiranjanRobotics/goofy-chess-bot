@@ -1,13 +1,22 @@
 #include "board.h"
 
 void
-init_board(Board *const board, const int piece_boards[12], const GameState state)
+init_board(Board *board, const Bitboard piece_boards[12], const GameState state)
 {
+    int piece_values[] = {100, 300, 320, 500, 900, 10000};
     board->halfmoves = safe_malloc(sizeof(Move) * 4);
     board->halfmove_counter = 0;
 
     for (int i = 0; i < 12; ++i)
+    {
         board->piece_boards[i] = piece_boards[i];
+        board->piece_list[i] = piece_from(
+            i % 6,
+            (i < 6) ? WHITE : BLACK,
+            piece_values[i % 6],
+            population_count(board->piece_boards[i])
+        );
+    }
 
     board->state = state;
 }

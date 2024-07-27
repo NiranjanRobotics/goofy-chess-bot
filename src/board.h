@@ -9,14 +9,6 @@
 
 typedef struct
 {
-    Square en_passant_target;
-    bool white_castling, black_castling;
-    int fifty_move_counter;
-    bool white_turn;
-} GameState;
-
-typedef struct
-{
     Bitboard piece_boards[12];
     Piece piece_list[12];
     Move *halfmoves;
@@ -25,7 +17,7 @@ typedef struct
 } Board;
 
 void
-init_board(Board *const board, const int piece_boards[12], const GameState state);
+init_board(Board *board, const Bitboard piece_boards[12], const GameState state);
 
 Bitboard
 white_pieces(const Board *const board);
