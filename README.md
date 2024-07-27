@@ -8,7 +8,6 @@ Debugger:  `gdb ./a.out`  or  `clang ./a.out` \
 
 ## Todo
 - (This could be done at anytime in the process) Add FEN and PGN support
-- Fix piece list (currently it doesn't track what square a piece is on)
 - Add board evaluation script
   - Use piece-square tables
   - Potentially track game phase, extra value for passed pawns in endgame
