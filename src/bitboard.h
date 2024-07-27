@@ -5,7 +5,7 @@
 #include "util/masks.h"
 #include "util/types.h"
 
-uint64_t
+Bitboard
 square_board(Square square);
 
 #endif
