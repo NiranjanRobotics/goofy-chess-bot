@@ -19,7 +19,7 @@ const GameState STARTING_STATE = {
     .en_passant_target = SQUARE_NIL,
     .white_turn = true,
     .fifty_move_counter = 0,
-    .castling_rights = {true, true, true, true},
+    .castling_rights = {true, true, true, true}
 };
 
 Piece
@@ -36,12 +36,11 @@ piece_from(const PieceType type, const Side side, const int value, const int cou
 int
 population_count(const Bitboard board)
 {
-    int count = board;
-    count =  count - ((count >> 1) & 0xAAAAAAAAAAAAAAAAull);
-    count = (count & 0xCCCCCCCCCCCCCCCCull) + ((count >> 2) & 0xCCCCCCCCCCCCCCCCull);
-    count = (count + (count >> 4)) & 0xF0F0F0F0F0F0F0F0ull;
-    count = (count * 0x8080808080808080ull) >> 56;
-    return (int) count;
+    uint64_t count = board;
+    count -= (count >> 1) & 0x5555555555555555ULL;
+    count = (count & 0x3333333333333333ULL) + ((count >> 2) & 0x3333333333333333ULL);
+    count = (count + (count >> 4)) & 0x0f0f0f0f0f0f0f0fULL;
+    return (int) ((count * 0x0101010101010101ULL) >> 56);
 }
 
 void *

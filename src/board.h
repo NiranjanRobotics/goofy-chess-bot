@@ -17,7 +17,7 @@ typedef struct
 } Board;
 
 void
-init_board(Board *board, const Bitboard piece_boards[12], const GameState state);
+init_board(Board *const board, const Bitboard piece_boards[12], const GameState state);
 
 Bitboard
 white_pieces(const Board *const board);

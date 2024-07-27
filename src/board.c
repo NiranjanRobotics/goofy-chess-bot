@@ -1,7 +1,7 @@
 #include "board.h"
 
 void
-init_board(Board *board, const Bitboard piece_boards[12], const GameState state)
+init_board(Board *const board, const Bitboard piece_boards[12], const GameState state)
 {
     int piece_values[] = {100, 300, 320, 500, 900, 10000};
     board->halfmoves = safe_malloc(sizeof(Move) * 4);
