@@ -7,12 +7,15 @@ Debugger:  `gdb ./a.out`  or  `clang ./a.out` \
 (if the output file from compilation is `./a.out`)
 
 ## Todo
+- (This could be done at anytime in the process) Add FEN and PGN support
 - Add board evaluation script
   - Use piece-square tables
   - Potentially track game phase, extra value for passed pawns in endgame
-- Add move functionality to Board struct
+- Add functionality to Board struct
+  - Add move to board
   - Update bitboards after move
-- Add move generation
+  - Add zobrists
+- Add legal move generation
   - Implement magic bitboards
 - Use minimax algorithm and alpha-beta pruning to search move trees
 - Add UCI support
