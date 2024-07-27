@@ -51,7 +51,7 @@ typedef enum
     BLACK_CR_Q,
 } CastlingRights;
 
-// Struct for piece list in board - shows piece's value and how many are on the board
+// Struct for piece list in board - shows piece's value and how many are on the board, as well as the squares they occupy
 typedef struct
 {
     PieceType type;
