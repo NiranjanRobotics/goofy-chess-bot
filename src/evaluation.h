@@ -1,6 +1,8 @@
 #ifndef evaluation_h
 #define evaluation_h
 
+// Functions to evaluate board position
+
 #include "util/common.h"
 #include "util/types.h"
 #include "util/masks.h"

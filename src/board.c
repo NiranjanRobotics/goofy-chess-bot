@@ -30,19 +30,21 @@ free_board(Board *board)
     free(board);
 }
 
-// Get index of piece bitboard in board->piece_boards
+// Get index of piece in board lists
 int
 piece_idx(const Side side, const PieceType piece_type)
 {
     return ((side == WHITE) ? 0 : 6) + piece_type;
 }
 
+// Get piece bitboard
 Bitboard
 piece_board(const Board *const board, const Side side, const PieceType piece_type)
 {
     return board->piece_boards[piece_idx(side, piece_type)];
 }
 
+// Get piece data from piece list
 Piece
 piece_list_item(const Board *const board, const Side side, const PieceType piece_type)
 {
@@ -86,5 +88,4 @@ play_move(Board *const board, Move move)
 {
     Square starting_square = start_square(move);
     Square ending_square = end_square(move);
-    // TODO: Add bitboard updates
 }

@@ -1,5 +1,6 @@
 #include "evaluation.h"
 
+// Evaluate position
 int
 evaluate(const Board *const board)
 {
@@ -7,6 +8,7 @@ evaluate(const Board *const board)
     return material;
 }
 
+// Evaluate material on the board
 int
 evaluate_material(const Board *const board)
 {
