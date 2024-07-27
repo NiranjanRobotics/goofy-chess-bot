@@ -1,5 +1,4 @@
 #include "evaluation.h"
-#include "debug.h"
 
 int
 evaluate(const Board *const board)
