@@ -35,7 +35,13 @@ Bitboard
 all_pieces(const Board *const board);
 
 int
-piece_board(const Side side, const PieceType piece_type);
+piece_idx(const Side side, const PieceType piece_type);
+
+Bitboard
+piece_board(const Board *const board, const Side side, const PieceType piece_type);
+
+Piece
+piece_list_item(const Board *const board, const Side side, const PieceType piece_type);
 
 void
 play_move(Board *const board, Move move);

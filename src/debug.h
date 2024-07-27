@@ -8,6 +8,7 @@
 #include "util/types.h"
 #include "board.h"
 #include "move.h"
+#include "evaluation.h"
 
 void
 print_board_info(const Board *const board);
@@ -17,5 +18,8 @@ print_bitboard(const Bitboard bitboard);
 
 void
 print_move_info(const Move move);
+
+void
+print_piece_info(const Piece piece);
 
 #endif

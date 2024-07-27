@@ -1,6 +1,4 @@
 #include "debug.h"
-#include "move.h"
-#include "util/types.h"
 
 // Print info for board struct as well as gui-like board position
 void
@@ -53,6 +51,7 @@ print_board_info(const Board *const board)
            (board->state.castling_rights[BLACK_CR_K])? 'k' : '\0',
            (board->state.castling_rights[BLACK_CR_Q])? 'q' : '\0');
 
+    printf(" [Evaluation: %d]", evaluate(board));
     printf(">\n");
 }
 
@@ -122,4 +121,48 @@ print_move_info(const Move move)
     printf("<Move [Start square: %c%d] ", files[starting_square & 7], (8 - (starting_square >> 3)));
     printf("[End square: %c%d] ", files[ending_square & 7], (8 - (ending_square >> 3)));
     printf("[Flag: %s]>\n", flag);
+}
+
+// Print info for a piece struct
+void
+print_piece_info(const Piece piece)
+{
+    char *piece_type;
+    printf("<Piece ");
+
+    switch (piece.type)
+    {
+        case PAWN:
+            piece_type = "Pawn";
+            break;
+
+        case KNIGHT:
+            piece_type = "Knight";
+            break;
+
+        case ROOK:
+            piece_type = "Rook";
+            break;
+
+        case BISHOP:
+            piece_type = "Bishop";
+            break;
+
+        case QUEEN:
+            piece_type = "Queen";
+            break;
+
+        case KING:
+            piece_type = "King";
+            break;
+
+        case PIECE_NIL:
+            piece_type = "None";
+            break;
+    }
+
+    printf("[Type: %s] ", piece_type);
+    printf("[Side: %s] ", (piece.side == WHITE)? "White" : "Black");
+    printf("[Count: %d] ", piece.count);
+    printf("[Value: %d]>\n", piece.value);
 }

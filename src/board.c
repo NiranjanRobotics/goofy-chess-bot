@@ -32,33 +32,45 @@ free_board(Board *board)
 
 // Get index of piece bitboard in board->piece_boards
 int
-piece_board(const Side side, const PieceType piece_type)
+piece_idx(const Side side, const PieceType piece_type)
 {
-    return (side == WHITE) ? 0 : 6 + piece_type;
+    return ((side == WHITE) ? 0 : 6) + piece_type;
+}
+
+Bitboard
+piece_board(const Board *const board, const Side side, const PieceType piece_type)
+{
+    return board->piece_boards[piece_idx(side, piece_type)];
+}
+
+Piece
+piece_list_item(const Board *const board, const Side side, const PieceType piece_type)
+{
+    return board->piece_list[piece_idx(side, piece_type)];
 }
 
 // Bitboard for white pieces
 Bitboard
 white_pieces(const Board *const board)
 {
-    return board->piece_boards[piece_board(WHITE, PAWN)]
-         | board->piece_boards[piece_board(WHITE, KNIGHT)]
-         | board->piece_boards[piece_board(WHITE, BISHOP)]
-         | board->piece_boards[piece_board(WHITE, ROOK)]
-         | board->piece_boards[piece_board(WHITE, QUEEN)]
-         | board->piece_boards[piece_board(WHITE, KING)];
+    return piece_board(board, WHITE, PAWN)
+         | piece_board(board, WHITE, KNIGHT)
+         | piece_board(board, WHITE, BISHOP)
+         | piece_board(board, WHITE, ROOK)
+         | piece_board(board, WHITE, QUEEN)
+         | piece_board(board, WHITE, KING);
 }
 
 // Bitboard for black pieces
 Bitboard
 black_pieces(const Board *const board)
 {
-    return board->piece_boards[piece_board(BLACK, PAWN)]
-         | board->piece_boards[piece_board(BLACK, KNIGHT)]
-         | board->piece_boards[piece_board(BLACK, BISHOP)]
-         | board->piece_boards[piece_board(BLACK, ROOK)]
-         | board->piece_boards[piece_board(BLACK, QUEEN)]
-         | board->piece_boards[piece_board(BLACK, KING)];
+    return piece_board(board, BLACK, PAWN)
+         | piece_board(board, BLACK, KNIGHT)
+         | piece_board(board, BLACK, BISHOP)
+         | piece_board(board, BLACK, ROOK)
+         | piece_board(board, BLACK, QUEEN)
+         | piece_board(board, BLACK, KING);
 }
 
 // Bitboard for all pieces
