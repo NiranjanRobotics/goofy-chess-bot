@@ -37,10 +37,10 @@ int
 population_count(const Bitboard board)
 {
     uint64_t count = board;
-    count -= (count >> 1) & 0x5555555555555555ULL;
-    count = (count & 0x3333333333333333ULL) + ((count >> 2) & 0x3333333333333333ULL);
-    count = (count + (count >> 4)) & 0x0f0f0f0f0f0f0f0fULL;
-    return (int) ((count * 0x0101010101010101ULL) >> 56);
+    count -= (count >> 1) & 0x5555555555555555ull;
+    count = (count & 0x3333333333333333ull) + ((count >> 2) & 0x3333333333333333ull);
+    count = (count + (count >> 4)) & 0x0F0F0F0F0F0F0F0Full;
+    return (int) ((count * 0x0101010101010101ull) >> 56);
 }
 
 void *
