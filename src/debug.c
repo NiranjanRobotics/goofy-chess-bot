@@ -12,6 +12,15 @@ print_board_info(const Board *const board)
     for (int i = 0; i < 64; ++i)
         board_position[i] = 0;
 
+    /*
+      . : empty tile
+      P/p : pawn
+      N/n : knight
+      B/b : bishop
+      R/r : rook
+      Q/q : queen
+      K/k : king
+    */
     const char chess_chars[] = ".PNBRQKpnbrqk";
 
     for (int i = 0; i < 12; ++i)
@@ -36,7 +45,7 @@ print_board_info(const Board *const board)
 
     printf("    ----------------\n");
     printf("    a b c d e f g h \n]");
-    
+
     printf(" [State: <State [Turn: %s] [Castling: %c%c%c%c]>]",
            (board->state.white_turn)? "White" : "Black",
            (board->state.castling_rights[WHITE_CR_K])? 'K' : '\0',
