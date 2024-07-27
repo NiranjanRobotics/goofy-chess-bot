@@ -1,4 +1,4 @@
-# Goofy Chess Bot
+# BOTez Gambit
 A (future) UCI chess engine for InnovateX hackathon by Niranjan, Zach, and Daniel.
 
 ## Running the engine
