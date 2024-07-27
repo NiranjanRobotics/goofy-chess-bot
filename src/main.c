@@ -11,7 +11,5 @@ main(int argc, char *argv[])
 
     print_move_info(move_new(E2, E4, EN_PASSANT_FLAG));
 
-    printf("[Population of bitboard] %d\n", population_count(WK_START));
-
     return 0;
 }
