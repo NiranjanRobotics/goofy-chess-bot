@@ -4,6 +4,7 @@
 void
 init_board(Board *const board, const Bitboard piece_boards[12], const GameState state)
 {
+    // Pawn, Knight, Bishop, Rook, Queen, King ???
     int piece_values[] = {100, 300, 320, 500, 900, 10000};
     board->halfmoves = safe_malloc(sizeof(Move) * 4);
     board->halfmove_counter = 0;

@@ -19,9 +19,9 @@ const Bitboard STARTING_POSITION[12] = {
 // Initial game state
 const GameState STARTING_STATE = {
     .en_passant_target = SQUARE_NIL,
-    .white_turn = true,
-    .fifty_move_counter = 0,
     .castling_rights = {true, true, true, true}
+    .fifty_move_counter = 0,
+    .white_turn = true,
 };
 
 // Easy syntax for making pieces

@@ -5,6 +5,7 @@ const Bitboard
     LIGHT_SQUARES = 0xAA55AA55AA55AA55ull,
     DARK_SQUARES = ~LIGHT_SQUARES,
 
+    // the rows (1-8)
     RANK_1 = 0x00000000000000FFull,
     RANK_2 = RANK_1 << 8ull,
     RANK_3 = RANK_1 << 16ull,
@@ -14,6 +15,7 @@ const Bitboard
     RANK_7 = RANK_1 << 48ull,
     RANK_8 = RANK_1 << 56ull,
 
+    // basically columns (a-h)
     FILE_A = 0x8080808080808080ull,
     FILE_B = 0x4040404040404040ull,
     FILE_C = 0x2020202020202020ull,

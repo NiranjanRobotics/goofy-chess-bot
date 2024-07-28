@@ -60,7 +60,7 @@ typedef struct
 } Piece;
 
 /*
- * Game state that tracks en passant target (usually SQUARE_NIL), castling rights (kingside 
+ * Game state that tracks en passant target (usually SQUARE_NIL), castling rights (kingside
  * and queenside for both sides), counter for 50 move rule, and turn boolean for player turn
  */
 typedef struct
