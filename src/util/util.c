@@ -19,7 +19,7 @@ const Bitboard STARTING_POSITION[12] = {
 // Initial game state
 const GameState STARTING_STATE = {
     .en_passant_target = SQUARE_NIL,
-    .castling_rights = {true, true, true, true}
+    .castling_rights = {true, true, true, true},
     .fifty_move_counter = 0,
     .white_turn = true,
 };
