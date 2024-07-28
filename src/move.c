@@ -2,8 +2,8 @@
 
 // Bit masks for relevant bits of Move type
 #define START_SQUARE_MASK 0b0000000000111111
-#define END_SQUARE_MASK 0b0000111111000000
-#define MOVE_FLAG_MASK 0b1111000000000000
+#define END_SQUARE_MASK   0b0000111111000000
+#define MOVE_FLAG_MASK    0b1111000000000000
 
 // Easy syntax to create a move
 Move
